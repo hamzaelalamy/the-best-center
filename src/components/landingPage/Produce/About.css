@@ -1,0 +1,366 @@
+    /* Timeliner.css */
+    /* Base Styles */
+    .timeliner {
+        padding: 0 20%;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    .timeliner .scroll-animation {
+        clear: both;
+        overflow: hidden;
+        max-width: 50%;
+        display: block;
+        position: relative;
+        margin: 25px auto;  /* Centered margin */
+        float: left;  /* No float for better alignment */
+    }
+    
+    .timeliner .scroll-animation:nth-child(2n) {
+        float: right;
+    }
+    
+    /* Adjustments for smaller screens */
+    @media (max-width: 1024px) {
+        .timeliner {
+        padding: 0 10%;
+        }
+    
+        .timeliner .scroll-animation {
+        max-width: 70%;
+        margin: 25px 15x;  /* Centered margin */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .timeliner {
+        padding: 0 5%;
+        }
+    
+        .timeliner .scroll-animation {
+        max-width: 100%;
+        margin: 25px 0;  /* Minimal margin for small screens */
+        float: none;
+        }
+    
+        .timeliner .scroll-animation:nth-child(2n) {
+        float: none;
+        }
+    }
+    
+    /* Optional: Larger displays specific */
+    @media (min-width: 1440px) {
+        .timeliner .scroll-animation {
+        margin: 25px auto;  /* Centered margin */
+        }
+    }
+    
+    .timeliner h2 {
+        padding: 0;
+        margin: 0 auto;
+        line-height: 1.5em;
+        max-width: 800px;
+        font-size: 32px;
+        font-weight: 700;
+        font-family: sans-serif;
+        clear: both;
+        text-align: center;  /* Centered text */
+    }
+    
+    .timeliner .contentBox {
+        opacity: 0;
+        transition-delay: 1.05s;
+    }
+    
+    .timeliner .contentBox img {
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        max-height: 350px;
+    }
+    
+    
+    .timeliner .scroll-animation span {
+        position: absolute;
+        display: block;
+        background: #eee;
+    }
+    
+    /* Keyframes */
+    @keyframes goRight {
+        from { left: 0; right: 100%; } 
+        40% { left: 0; right: 0; }
+        60% { left: 0; right: 0; }
+        to { left: 100%; right: 0; }
+    }
+    
+    @keyframes goLeft {
+        from { left: 100%; right: 0; } 
+        40% { left: 0; right: 0; }
+        60% { left: 0; right: 0; }
+        to { left: 0; right: 100%; }
+    }
+    
+    @keyframes goTop {
+        from { top: 100%; bottom: 0; } 
+        40% { top: 0; bottom: 0; }
+        60% { top: 0; bottom: 0; }
+        to { top: 0; bottom: 100%; }
+    }
+    
+    @keyframes goBottom {
+        from { top: 0; bottom: 100%; } 
+        40% { top: 0; bottom: 0; }
+        60% { top: 0; bottom: 0; }
+        to { top: 100%; bottom: 0; }
+    }
+    
+    @keyframes backRight {
+        from { left: 0; right: 100%; } 
+        40% { left: 0; right: 0; }
+        60% { left: 0; right: 0; }
+        to { left: 0; right: 100%; }
+    }
+    
+    @keyframes backLeft {
+        from { left: 100%; right: 0; } 
+        40% { left: 0; right: 0; }
+        60% { left: 0; right: 0; }
+        to { left: 100%; right: 0; }
+    }
+    
+    @keyframes backTop {
+        from { top: 100%; bottom: 0; } 
+        40% { top: 0; bottom: 0; }
+        60% { top: 0; bottom: 0; }
+        to { top: 100%; bottom: 0; }
+    }
+    
+    @keyframes backBottom {
+        from { top: 0; bottom: 100%; } 
+        40% { top: 0; bottom: 0; }
+        60% { top: 0; bottom: 0; }
+        to { top: 0; bottom: 100%; }
+    }
+    
+    /* Reveal the content */
+    .timeliner .revealedBox .contentBox {
+        opacity: 0;
+    } 
+    
+    .timeliner .revealedBox span {
+        position: absolute;
+        display: block;
+        background: #eee;
+    }
+    
+    .timeliner .revealedBox-in .contentBox {
+        opacity: 1;
+        transition-delay: 1.05s;
+    }
+    
+    .timeliner .revealedBox-in.goRight span { animation: goRight 1.4s; }
+    .timeliner .revealedBox-in.goLeft span { animation: goLeft 1.4s; }
+    .timeliner .revealedBox-in.backRight span { animation: backRight 1.4s; }
+    .timeliner .revealedBox-in.backLeft span { animation: backLeft 1.4s; }
+    .timeliner .revealedBox-in.goTop span { animation: goTop 1.4s; }
+    .timeliner .revealedBox-in.goBottom span { animation: goBottom 1.4s; }
+    .timeliner .revealedBox-in.backTop span { animation: backTop 1.4s; }
+    .timeliner .revealedBox-in.backBottom span { animation: backBottom 1.4s; }
+    
+    .timeliner .revealedBox-in span { animation-delay: 0.1s; }
+    .timeliner .revealedBox-in span:nth-child(2) { animation-delay: 0.2s; }
+    .timeliner .revealedBox-in span:nth-child(3) { animation-delay: 0.3s; }
+    .timeliner .revealedBox-in span:nth-child(4) { animation-delay: 0.4s; }
+    .timeliner .revealedBox-in span:nth-child(5) { animation-delay: 0.5s; }
+    
+    /* Masks sizes */
+    .timeliner .revealedBox-in.goRight,
+    .timeliner .revealedBox-in.goLeft,
+    .timeliner .revealedBox-in.backRight,
+    .timeliner .revealedBox-in.backLeft {
+        > span {
+        height: 100%;
+        top: 0;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goRight.childrenSpan-2,
+    .timeliner .revealedBox-in.goLeft.childrenSpan-2,
+    .timeliner .revealedBox-in.backRight.childrenSpan-2,
+    .timeliner .revealedBox-in.backLeft.childrenSpan-2 {
+        > span {
+        height: 50%;
+        }
+        > span:nth-child(2) {
+        top: 50%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goRight.childrenSpan-3,
+    .timeliner .revealedBox-in.goLeft.childrenSpan-3,
+    .timeliner .revealedBox-in.backRight.childrenSpan-3,
+    .timeliner .revealedBox-in.backLeft.childrenSpan-3 {
+        > span {
+        height: 33.33333%;
+        }
+        > span:nth-child(2) {
+        top: 33.33333%;
+        }
+        > span:nth-child(3) {
+        top: 66.66666%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goRight.childrenSpan-4,
+    .timeliner .revealedBox-in.goLeft.childrenSpan-4,
+    .timeliner .revealedBox-in.backRight.childrenSpan-4,
+    .timeliner .revealedBox-in.backLeft.childrenSpan-4 {
+        > span {
+        height: 25%;
+        }
+        > span:nth-child(2) {
+        top: 25%;
+        }
+        > span:nth-child(3) {
+        top: 50%;
+        }
+        > span:nth-child(4) {
+        top: 75%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goRight.childrenSpan-5,
+    .timeliner .revealedBox-in.goLeft.childrenSpan-5,
+    .timeliner .revealedBox-in.backRight.childrenSpan-5,
+    .timeliner .revealedBox-in.backLeft.childrenSpan-5 {
+        > span {
+        height: 20%;
+        }
+        > span:nth-child(2) {
+        top: 20%;
+        }
+        > span:nth-child(3) {
+        top: 40%;
+        }
+        > span:nth-child(4) {
+        top: 60%;
+        }
+        > span:nth-child(5) {
+        top: 80%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goTop,
+    .timeliner .revealedBox-in.goBottom,
+    .timeliner .revealedBox-in.backTop,
+    .timeliner .revealedBox-in.backBottom {
+        > span {
+        width: 100%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goTop.childrenSpan-2,
+    .timeliner .revealedBox-in.goBottom.childrenSpan-2,
+    .timeliner .revealedBox-in.backTop.childrenSpan-2,
+    .timeliner .revealedBox-in.backBottom.childrenSpan-2 {
+        > span {
+        width: 50%;
+        }
+        > span:nth-child(2) {
+        left: 50%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goTop.childrenSpan-3,
+    .timeliner .revealedBox-in.goBottom.childrenSpan-3,
+    .timeliner .revealedBox-in.backTop.childrenSpan-3,
+    .timeliner .revealedBox-in.backBottom.childrenSpan-3 {
+        > span {
+        width: 33.33333%;
+        }
+        > span:nth-child(2) {
+        left: 33.33333%;
+        }
+        > span:nth-child(3) {
+        left: 66.66666%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goTop.childrenSpan-4,
+    .timeliner .revealedBox-in.goBottom.childrenSpan-4,
+    .timeliner .revealedBox-in.backTop.childrenSpan-4,
+    .timeliner .revealedBox-in.backBottom.childrenSpan-4 {
+        > span {
+        width: 25%;
+        }
+        > span:nth-child(2) {
+        left: 25%;
+        }
+        > span:nth-child(3) {
+        left: 50%;
+        }
+        > span:nth-child(4) {
+        left: 75%;
+        }
+    }
+    
+    .timeliner .revealedBox-in.goTop.childrenSpan-5,
+    .timeliner .revealedBox-in.goBottom.childrenSpan-5,
+    .timeliner .revealedBox-in.backTop.childrenSpan-5,
+    .timeliner .revealedBox-in.backBottom.childrenSpan-5 {
+        > span {
+        width: 20%;
+        }
+        > span:nth-child(2) {
+        left: 20%;
+        }
+        > span:nth-child(3) {
+        left: 40%;
+        }
+        > span:nth-child(4) {
+        left: 60%;
+        }
+        > span:nth-child(5) {
+        left: 80%;
+        }
+    }
+    
+    /* Media Queries for Responsiveness */
+    @media (max-width: 1024px) {
+        .timeliner {
+        padding: 0 10%;
+        }
+    
+        .timeliner h2 {
+        font-size: 28px;
+        }
+    
+        .timeliner .scroll-animation {
+        max-width: 70%;
+        margin: 25px auto;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .timeliner {
+        padding: 0 5%;
+        }
+    
+        .timeliner h2 {
+        font-size: 20px;
+        }
+    
+        .timeliner .scroll-animation {
+        max-width: 100%;
+        margin: 25px 0;
+        float: none;
+        }
+    
+        .timeliner .scroll-animation:nth-child(2n) {
+        float: none;
+        }
+    }
+    .paragraph{
+        text-align: center;
+    }

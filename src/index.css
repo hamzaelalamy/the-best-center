@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'ThunderXBold';
+    src: url('/fonts/Thunder-ExtraBoldLC.woff2') format('woff2'),
+         url('/fonts/Thunder-ExtraBoldLC.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Thunder Black';
+    src: url('/fonts/Thunder-BlackLC.woff2') format('woff2'),
+    url('/fonts/Thunder-BlackLC.woff') format('woff');
+    font-weight: light;
+    font-style: light;
+}
+
+@font-face {
+    font-family: 'ThunderBold';
+    src: url('/fonts/Thunder-BoldLC.woff2') format('woff2'),
+         url('/fonts/Thunder-BoldLC.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

@@ -1,0 +1,47 @@
+.textslider__area {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--black-2);
+}
+
+@media (max-width: 1200px) {
+  .textslider__area {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.textslider__area .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.textslider__text {
+  font-weight: 700;
+  font-size: 110px;
+  color: black;
+  line-height: 110px;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  margin: 0 50px;
+  overflow-y: hidden;
+}
+
+.textslider__text:hover{
+  color: #662483;
+}
+
+@media (max-width: 1400px) { /* Adjust the value as per your $xl breakpoint */
+  .textslider__text {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 1200px) { /* Adjust the value as per your $lg breakpoint */
+  .textslider__text {
+    font-size: 60px;
+  }
+}
+
+.textslider__text span {
+  color: var(--primary);
+}

@@ -1,0 +1,11 @@
+@keyframes flip {
+    0%, 80% {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .waviy span {
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i));
+  }
+  

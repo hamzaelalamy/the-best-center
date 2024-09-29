@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Mathématiques",
+    "description": "Explorez les concepts fondamentaux et avancés des mathématiques, de l'algèbre à la géométrie.",
+    "path": "/subjects/mathematics",
+    "image": "/assets/subjects/mathematics.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Physique",
+    "description": "Découvrez les lois qui régissent notre univers, de la mécanique classique à la physique quantique.",
+    "path": "/subjects/physics",
+    "image": "/assets/subjects/physics.jpg"
+  },
+  {
+    "id": 3,
+    "title": "SVT",
+    "description": "Plongez dans les sciences de la vie et de la Terre, explorant la biologie, la géologie et l'écologie.",
+    "path": "/subjects/svt",
+    "image": "/assets/subjects/svt.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Français",
+    "description": "Maîtrisez la langue et la littérature française, en développant vos compétences en expression écrite et orale.",
+    "path": "/subjects/french",
+    "image": "/assets/subjects/french.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Anglais",
+    "description": "Développez vos compétences en anglais, de la conversation courante à l'analyse littéraire.",
+    "path": "/subjects/english",
+    "image": "/assets/subjects/english.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Robotique",
+    "description": "Initiez-vous à la robotique et à la programmation, en construisant et programmant vos propres robots.",
+    "path": "/subjects/robotics",
+    "image": "/assets/subjects/robotics.jpg"
+  }
+]

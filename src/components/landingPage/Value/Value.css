@@ -1,0 +1,83 @@
+/* Scoped container to ensure styles only apply within this component */
+.scoped-container {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+  }
+  
+  .scoped-container .anima-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 600px) {
+    .scoped-container .home_title {
+        height: 35vh;
+    }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .scoped-container .home_title {
+        height: 45vh;
+    }
+  }
+  
+  .scoped-container .home_title {
+    margin: 120px 0 0;
+    overflow: hidden;
+    padding: 13vw 0 0;
+    width: 100vw;
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .scoped-container li {
+    display: flex;
+    position: relative;
+    height: 21.3vw;
+    pointer-events: none;
+    margin: -15vw -1.7vw 0;
+  }
+  
+  .scoped-container h2 {
+    font-size: 7.7vw;
+    margin: 0;
+    padding: 0;
+    line-height: 8.2vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: -.6vw;
+    width: 200%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .scoped-container span {
+    display: inline-block;
+  }
+  
+  .scoped-container .left {
+    width: 50%;
+    overflow: hidden;
+    color: #F39200;
+  }
+  
+  .scoped-container .left h2 {
+    transform: translateZ(0) rotate(-15deg) skewX(-15deg);
+  }
+  
+  .scoped-container .right {
+    width: 50%;
+    overflow: hidden;
+    color: rgb(102, 45, 145);
+  }
+  
+  .scoped-container .right h2 {
+    margin-left: -100%;
+    transform: translateZ(0) rotate(15deg) skewX(15deg);
+  }
+  

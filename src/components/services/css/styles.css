@@ -1,0 +1,307 @@
+:root {
+    --custom-purple: #662483;
+    --custom-orange: #F39200;
+    --font-sans: "Poppins", sans-serif;
+    --gradient-hover: linear-gradient(135deg, #520672 40%, #520672 100%);
+
+    font-size: 1em;
+}
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--custom-purple);
+    margin-bottom: 2rem;
+    text-align: left;
+    transform: translateY(0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: var(--font-sans);
+    --white: #F7F1E1;
+    --cream: #F6E6CB;
+    --dcream: #EACEA3;
+    --border-gray: #f2f7fa;
+    --black: black;
+    --mono: 'source-code-pro';
+    --display: "Inter", sans-serif;
+}
+
+
+
+.services-container {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem; /* Ajustement de l'écart entre les cartes */
+    padding-left: 2rem; /* Ajustement des marges pour plus de flexibilité */
+    padding-right: 2rem; /* Ajout de marge à droite */
+}
+
+
+
+
+.service-card {
+    border-radius: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 450px;
+    width: 350px;
+    position: relative;
+    background: var(--gradient-background); /* Dégradé de gauche à droite */
+
+}
+
+.service-image-container {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%); /* Inclinaison pour toute la carte */
+    transition: background-color 0.3s ease;
+}
+
+.service-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.az-hub-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px;
+    height: auto;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .az-hub-icon {
+    transform: scale(1.1);
+}
+
+.service-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.service-card:hover .service-image-container {
+    background: var(--gradient-hover); /* Appliquer le gradient sur toute la carte lors du survol */
+}
+.service-card:hover  {
+    background: var(--gradient-hover); /* Appliquer le gradient sur toute la carte lors du survol */
+}
+
+.service-card:hover .service-image {
+    transform: scale(1.1);
+}
+
+.service-card:hover .service-content {
+    background: var(--gradient-hover); 
+}
+
+.service-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    transition: color 0.3s ease;
+}
+
+.service-link {
+    display: inline-block;
+    background-color: var(--custom-purple);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.service-card:hover .service-title,
+.service-card:hover .service-description,
+.service-card:hover .service-link {
+    color: white;
+}
+
+.service-card:hover .service-link {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.hover-text {
+    display: none; /* Initialement caché */
+    font-size: 1rem;
+    color: white;
+    margin-top: 1rem;
+}
+
+.service-card:hover .hover-text {
+    display: block; /* Affiche le texte au survol */
+}
+
+/* Animation pour le bouton texte et flèche */
+.button-text {
+    display: inline-block;
+    position: relative;
+    animation: moveText 3s linear infinite;
+    white-space: nowrap;
+}
+
+@keyframes moveArrow {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.arrow {
+    display: inline-block;
+    animation: moveArrow 1.5s ease-in-out infinite;
+}
+
+.discover-button .arrow {
+    margin-left: 10px;
+    transition: margin-left 0.3s ease;
+}
+
+.discover-button:hover .arrow {
+    margin-left: 15px;
+}
+
+
+    .underline-gradient {
+        font-size: 2.5rem !important; /* Forcefully apply the font size */
+        margin-top: 4rem;
+        margin-left: -10px !important;
+
+      }
+      
+
+    /* -----------responsive page   --------------------- /*
+
+/* Pour les écrans de 1024px et moins */
+@media (max-width: 1024px) {
+    .services-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Pour les écrans de 768px et moins */
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem; /* Réduction de l'espace entre les cartes pour les petits écrans */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Pour les écrans de 480px et moins */
+@media (max-width: 480px) {
+    .services-container {
+        grid-template-columns: 1fr; /* Les cartes s'affichent en une seule colonne */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        justify-content: center; /* Centrer les cartes horizontalement */
+        align-items: center; /* Centrer les cartes verticalement */
+    }
+    .title {
+        font-size: 1.4rem;
+    }
+    .service-card {
+        height: auto; /* La hauteur des cartes s'ajuste à leur contenu */
+        width: 100%; /* Les cartes occupent toute la largeur disponible */
+        margin: 0 auto; /* Centrer la carte dans son conteneur */
+    }
+    .service-content {
+        padding: 1rem; /* Réduction des marges internes pour les petits écrans */
+    }
+    .service-title {
+        font-size: 1.2rem;
+    }
+    .service-description {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ---------------global-service------------*/
+
+.global-service-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #f9fafb;
+  }
+  
+  .global-service-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .section-subtitle1 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6b7280;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  
+  .section-title1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  
+  .section-description1 {
+    font-size: 1.2rem;
+    color: #374151;
+  }
+  
+  @media (max-width: 768px) {
+    .section-title1 {
+      font-size: 2rem;
+    }
+  
+    .section-subtitle1 {
+      font-size: 0.875rem;
+    }
+  }
+  

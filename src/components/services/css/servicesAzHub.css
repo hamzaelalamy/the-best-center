@@ -1,0 +1,386 @@
+:root {
+    --custom-purple: #662483;
+    --custom-orange: #F39200;
+    --font-sans: 'Poppins', sans-serif;
+    font-size: 1em;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: var(--font-sans);
+    --white: #F7F1E1;
+    --cream: #F6E6CB;
+    --dcream: #EACEA3;
+    --orange: #F39200;
+    --purple: #662483;
+    --border-gray: #f2f7fa;
+    --black: black;
+    --mono: 'source-code-pro';
+    --display: 'Poppins', sans-serif;
+
+}
+
+.p-6 {
+    padding: 1rem;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+
+.services-azhub {
+    overflow: hidden;
+}
+
+.description-container {
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25rem;
+    margin-left: 50px; /* Ajouter de l'espace à gauche */
+background-color: white;
+    
+}
+
+.description-container p {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.underline-gradient {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, #070706, #111111);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-left: 10px;
+}
+
+.minip {
+    width: 340px;
+    height: 450px;
+    margin: 10px;
+    background: var(--orange);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border-gray);
+    transition: opacity 0.6s, transform 0.6s;
+    transform: translateY(30px);
+    opacity: 0; /* Hidden by default for animation */
+}
+
+.minip.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.minip:hover .mg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    border-top: 3px solid var(--purple);
+    border-left: 3px solid var(--orange);
+    transition: border-color 0.6s;
+}
+
+.minip .mg {
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: grid;
+    grid-template-columns: 250px 50px;
+    grid-template-rows: 100px 150px;
+    grid-template-areas: 
+        'clr group'
+        'clr .....';
+    transition: grid-template-columns .6s linear, grid-template-rows .6s linear;
+}
+
+.minip:hover .mg {
+    grid-template-columns: 150px 150px;
+    grid-template-rows: 50px 300px;
+    transition: grid-template-columns .6s linear, grid-template-rows .6s linear;
+}
+
+.minip .mg .clr {
+    grid-area: clr;
+    background: white;
+    padding: 10px;
+}
+
+.minip .mg .group {
+    font: 10px/10px var(--mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.minip .mg .group span {
+    display: block;
+    transform: rotate(180deg);
+    transition: transform .2s linear;
+}
+
+.minip:hover .mg .group span {
+    transform: rotate(270deg);
+    transition: transform .2s linear;
+}
+
+.minip .av {
+    width: 200px;
+    height: 350px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    background: var(--white);
+    background-position: top center;
+    background-size: cover;
+    transition: width .6s linear, height .6s linear;
+}
+
+.minip:hover .av {
+    width: 250px;
+    height: 400px;
+    transition: width .6s linear, height .6s linear;
+}
+
+.minip .info {
+    width: 190px;
+    max-height: 100px;
+    padding: 20px;
+    position: absolute;
+    bottom: 100px;
+    left: 0px;
+    background: var(--purple);
+    color: var(--cream);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    transition: bottom .6s linear;
+}
+
+.minip:hover .info {
+    bottom: 50px;
+    transition: bottom .6s linear;
+    border-bottom-left-radius: 50px;
+}
+
+.minip .info .name {
+    display: block;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 30px;
+    text-indent: -25px;
+    letter-spacing: 1px;
+    margin: 0px 0px 10px 25px;
+    font-family: var(--display);
+}
+
+.minip .info .deets {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font: 700 10px/15px var(--display);
+}
+
+.minip a.plot {
+    width: 117px;
+    height: 30px;
+    position: absolute;
+    bottom: 85px;
+    left: 85px;
+    background: var(--dcream);
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    border-radius: 40px;
+    font: 700 10px/10px var(--display);
+}
+
+.minip a.plot:hover {
+    background: var(--cream);
+    color: var(--orange);
+}
+
+.minip .mg .group .az-hub-link {
+    color: var(--purple);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+}
+
+.minip .mg .group .az-hub-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.minip .mg .group .az-hub-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.az-hub-icon {
+    width: 50px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.minip:hover .az-hub-icon {
+    transform: scale(1.1);
+}
+
+
+/*-------------------responsive desing ----------------------*/
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-content {
+        padding: 15px;
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 50vh; /* Réduction de la hauteur pour les petits écrans */
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .hero-content {
+        padding: 10px;
+        border-radius: 5px;
+        max-width: 90%; /* Réduction de la largeur maximale */
+        margin: 0 auto; /* Centrer horizontalement */
+    }
+
+    .description-section {
+        padding: 1rem; /* Réduction de la marge intérieure */
+        text-align: center; /* Centrer le texte */
+        background-color: #f8f8f8;
+
+    }
+
+    .description-section p {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        background-color: #f8f8f8;
+
+    }
+}
+
+
+/*-------------------pagination----------------------*/
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+  
+.nav-button {
+    background: none;
+    border: none;
+    color: var(--black);
+    font-size: 3rem; /* Augmenter la taille des flèches */
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+  
+.nav-button:hover {
+    color: var(--custom-purple);
+}
+  
+.nav-button:disabled {
+    color: var(--border-gray); /* Couleur grise pour les flèches désactivées */
+    cursor: not-allowed;
+}
+  
+.nav-button:focus {
+    outline: none;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-image 1s ease-in-out;
+    border-image: fill 0 linear-gradient(#0001,#000);
+
+}

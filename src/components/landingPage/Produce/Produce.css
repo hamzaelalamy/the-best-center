@@ -1,0 +1,50 @@
+.produceMain {
+  position: relative;
+  margin-top: 50vh;
+}
+/* Wrapper to position SVGs relative to the Produce component */
+.produceWrapper {
+  position: relative;
+}
+
+/* SVGs floating next to the component */
+.floatingSVGs {
+  position: fixed; /* Fixed to stay in view until scroll ends */
+  top: 50%; /* Center vertically */
+  transform: translateY(-50%); /* Centering the SVGs vertically */
+  width: 100%; /* Full width for easy positioning of left and right */
+  z-index: 10;
+  display: flex;
+  justify-content: space-between; /* Position SVGs on left and right */
+  padding: 0 5%; /* Adjust to control distance from the edges */
+}
+
+.firstSVG {
+  align-self: flex-start; /* Aligns the first SVG on the left */
+}
+
+.secondSVG {
+  align-self: flex-end; /* Aligns the second SVG on the right */
+}
+
+.floatSVG {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  animation: floatBounce 3s infinite ease-in-out; /* Bouncing animation */
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-20px);
+  }
+}
+
+/* Hide SVGs on smaller screens */
+@media (max-width: 1200px) {
+  .floatingSVGs {
+      display: none;
+  }
+}

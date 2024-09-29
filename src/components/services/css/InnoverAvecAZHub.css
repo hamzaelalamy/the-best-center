@@ -1,0 +1,210 @@
+:root {
+    --gradient-hover1: linear-gradient(135deg, #520672 40%, #0a2840 100%);
+}
+
+.innover-azhub {
+    background-color: #f9fafb;
+}
+
+/* Section principale */
+.cta-section1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 10px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -10px;
+}
+
+.cta-wrapper1 {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    background-image: url("/assets/services/communicationAz.jpg");
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+    position: relative;
+    border-image: fill 0 linear-gradient(#0001,#000);
+
+}
+
+.cta-content10 {
+    max-width: 50%;
+    text-align: left;
+}
+
+.cta-content10 h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-content10 h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #F39200;
+}
+
+.cta-content10 p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-button1 {
+    background-color: #662483;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button1:hover {
+    background-color: #F39200;
+}
+
+.cta-image1 {
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cta-image1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 300px;
+}
+
+/* Section des nombres */
+.numbers-section {
+    background-color: #0a2840;
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.numbers-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.number-item {
+    flex: 1;
+    margin: 0 20px;
+    position: relative;
+}
+
+.number-item h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F39200;
+    margin-bottom: 10px;
+}
+
+.number-item p {
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.number-item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50px;
+    background-color: #ffffff;
+}
+
+/* Media Queries pour la réactivité */
+@media (max-width: 768px) {
+    .cta-wrapper1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .cta-content10 {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .cta-image1 {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .numbers-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .number-item {
+        margin: 0;
+    }
+
+    .number-item:not(:last-child)::after {
+        display: none; /* Supprime la ligne entre les éléments */
+    }
+
+    .number-item h3 {
+        font-size: 2rem;
+    }
+
+    .number-item p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cta-content10 h2, .cta-content10 h1 {
+        font-size: 2rem;
+    }
+
+    .cta-content10 p {
+        font-size: 1rem;
+    }
+
+    .cta-button1 {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .numbers-container {
+        padding: 0 20px;
+    }
+
+    .number-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .number-item p {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+
+.azhub-icon {
+    max-width: 100px; /* Ajustez la taille selon vos besoins  */
+    margin-bottom: 20px;
+}
