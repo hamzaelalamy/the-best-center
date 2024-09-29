@@ -1,14 +1,10 @@
 import { useState, useEffect, useRef } from "react";
 import HeroSection from "../components/landingPage/HeroSection";
-import Loading from "../components/common/loading/Loading";
 import Navbar from "../components/common/Navbar/Navbar";
 import About from "../components/landingPage/About";
 import ServicePage from "../components/services/ServicesPage";
 import Footer from "../components/common/Footer";
-import Team from "../components/landingPage/Team/Team";
 import Actualites from "../components/landingPage/EventActualites/Actualites";
-import Clients from "../components/landingPage/ClientSlide";
-import Produce from "../components/landingPage/Produce/Produce"
 import Values from '../components/landingPage/Textslider/Textslider';
 import { useScroll } from 'framer-motion';
 import ScrollAnimation from "../components/landingPage/servicesScroll/ServicesScroll";
