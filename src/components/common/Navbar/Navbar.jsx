@@ -10,7 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = ({ contentRefs = [] }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(true);
   const navbarRef = useRef(null);
   const logoRef = useRef(null);
 
@@ -19,7 +19,7 @@ const Navbar = ({ contentRefs = [] }) => {
       if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
-        setIsScrolled(false);
+        setIsScrolled(true);
       }
     };
 
